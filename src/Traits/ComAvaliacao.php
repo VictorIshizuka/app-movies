@@ -1,6 +1,6 @@
-
 <?php
 
+namespace src\Traits;
 trait ComAvaliacao
 {
   private array $notas = [];

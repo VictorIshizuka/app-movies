@@ -1,5 +1,8 @@
 <?php
 
+namespace src\Helpers;
+
+use src\Model\Titulo;
 class CalculadoraDeMaratonas
 {
   private int $duracaoMaratona = 0;

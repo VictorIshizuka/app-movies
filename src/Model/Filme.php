@@ -1,5 +1,5 @@
 <?php
-
+namespace src\Model;
 class Filme extends Titulo 
 {
 
@@ -13,7 +13,7 @@ class Filme extends Titulo
     parent::__construct($nome, $anoLancamento, $genero);
   }
 
-  #[Override]
+  // #[Override]
   public function duracaoEmMinutos():int{
     return  $this->duracaoEmMinutos;
   }

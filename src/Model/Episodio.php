@@ -1,5 +1,8 @@
 <?php
 
+namespace src\Model;
+
+use src\Traits\ComAvaliacao;
 class Episodio implements Avaliavel
 {
   use ComAvaliacao;

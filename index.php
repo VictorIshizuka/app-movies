@@ -1,14 +1,16 @@
 <?php
+require 'autoload.php';
 
-require __DIR__ . "/src/Model/Avaliavel.php";
-require __DIR__ . "/src/Traits/ComAvaliacao.php";
-require __DIR__ . "/src/Model/Titulo.php";
-require __DIR__ . "/src/Model/Episodio.php";
-require __DIR__ . "/src/Model/Serie.php";
-require __DIR__ . "/src/Model/Filme.php";
-require __DIR__ . "/src/Model/Genero.php";
-require __DIR__ . "/src/Helpers/CalculadoraDeMaratonas.php";
-require __DIR__ . "/src/Helpers/ConversorNotaEstrela.php";
+use \src\Model\{
+    Filme,
+    Episodio,   
+    Serie,
+    Genero
+};
+use \src\Helpers\{
+    CalculadoraDeMaratonas,
+    ConversorNotaEstrela
+};
 
 echo "Bem-vindo(a) ao ScreenMatch\n";
 
@@ -19,14 +21,14 @@ $filme->avalia(5);
 
 var_dump($filme);
 
-echo $filme->media()."\n";
+echo $filme->media() . "\n";
 
-$serie = new Serie('Lost', 2007, Genero::Drama, 10,20, 30);
+$serie = new Serie('Lost', 2007, Genero::Drama, 10, 20, 30);
 $episodio = new Episodio($serie, 'Epsiodio piloto', 1);
 
-echo $serie->anoLancamento."\n";
+echo $serie->anoLancamento . "\n";
 $serie->avalia(9);
-echo $serie->media()."\n";
+echo $serie->media() . "\n";
 
 $calculadora = new CalculadoraDeMaratonas();
 $calculadora->inclui($filme);
@@ -38,5 +40,5 @@ var_dump($serie);
 echo "Para essa maratona. Você precisa de $duracao minutos\n";
 
 $conversor = new ConversorNotaEstrela();
-echo $conversor->converte($serie)."\n";
-echo $conversor->converte($filme)."\n";
+echo $conversor->converte($serie) . "\n";
+echo $conversor->converte($filme) . "\n";

@@ -1,5 +1,11 @@
 <?php
 
+namespace src\Model;
+
+use src\Model\Genero;
+use src\Traits\ComAvaliacao;
+
+
 abstract class Titulo implements Avaliavel
 {
   use ComAvaliacao;
